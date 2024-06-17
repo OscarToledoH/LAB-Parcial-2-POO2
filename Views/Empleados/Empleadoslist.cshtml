@@ -1,0 +1,56 @@
+
+@model List<Empleado>
+    @{
+        ViewData["Title"] = "Lista de empleados";
+        int Id = 0;
+    }
+
+    
+
+<div class="text-center">
+    <h1> Lista de Empleados</h1>
+    <a asp-controller="Empleados" asp-action="EmpleadosAdd" class="btn btn-primary mb-3">Agregar Empleado</a>
+    <hr size="4">
+
+</div>
+
+<table class="table table-borderless text-center">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Telefono</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var Empleado in Model)
+        {
+            {
+                Id++;
+            }
+            <tr>
+                <th>@Id</th>
+                <td>@Empleado.Nombre</td>
+                <td>@Empleado.Apellido</td>
+                <td>@Empleado.Edad</td>
+                <td>@Empleado.Telefono</td>
+                <td>@Empleado.Email</td>
+                
+                <td>
+                    <a class="btn btn-outline-info" asp-controller="Empleados" asp-action="EmpleadosEdit" asp-route-id="@Empleado.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-controller="Empleados" asp-action="EmpleadosDelete" asp-route-id="@Empleado.Id">Borrar</a>
+                </td>
+            </tr>
+        }
+
+
+
+    </tbody>
+
+</table>
+
+<br><br><br><br><br><br><br>

@@ -1,0 +1,36 @@
+@model Empleado
+
+<h1 class="text-center">Nuevo Empleado</h1>
+<br><br>
+
+<form asp-action="EmpleadosAdd" method="post" class="text-center">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div>
+        <label class="from-label " for="Nombre">Empleado</label><br>
+        <input asp-for="Nombre" placeholder="Escriba el Nombre">
+        
+    </div>
+    <div>
+        <label for="Apellido">Apellido</label><br>
+        <input asp-for="Apellido" placeholder="Escriba el Apellido">
+             
+    </div>
+      <div>
+        <label for="Edad">Edad</label><br>
+        <input asp-for="Edad" placeholder="Escriba la Edad">
+            
+    </div>
+     <div>
+        <label for="Telefono">Telefono</label><br>
+        <input asp-for="Telefono" placeholder="Escriba un Telefono">
+      
+    </div>
+    <div>
+        <label for="Email">Email</label><br>
+        <input asp-for="Email" placeholder="Escriba un Correo">
+          
+    </div> 
+    
+    <br>
+    <button class="btn btn-primary mb-3" >Guardar</button>
+</form>

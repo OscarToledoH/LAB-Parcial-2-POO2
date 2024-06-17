@@ -1,0 +1,36 @@
+@model PuestosModel
+@{
+    ViewData["title"] = "Edicion";
+}
+
+
+<h1 class="text-center">Edicion de Empleado</h1>
+<br><br>
+
+<form  asp-controller="Puestos" asp-action="PuestosEdit" class="text-center">
+    <input type="hidden" asp-for="Id">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div>
+        <label class="from-label " for="Areas">Puesto</label><br>
+        <input asp-for="Areas" placeholder="Escriba el Area">
+        
+    </div>
+    <div>
+        <label for="Clave">Clave</label><br>
+        <input asp-for="Clave" placeholder="Escriba la clave">
+             
+    </div>
+      <div>
+        <label for="Personas">No.Personas</label><br>
+        <input asp-for="Personas" placeholder="Escriba el numero ">       
+    </div> 
+     <div>
+        <label for="Salario">Salario</label><br>
+        <input asp-for="Salario" placeholder="Escriba el Salario">       
+    </div> 
+     
+    <br>
+    <button class="btn btn-primary mb-3" >Guardar</button>
+    <a class="btn btn-outline-secundary mb-3" asp-controller="Puestos" asp-action="Puestoslist">Regresar</a>
+</form>

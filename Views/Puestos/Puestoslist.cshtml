@@ -1,0 +1,54 @@
+
+@model IEnumerable<PuestosModel>
+@{
+    ViewData["title"] = "Lista de Puestos";
+    int Id = 0;
+}
+
+
+
+<div class="text-center">
+    <h1 > Lista de Puestos</h1>
+    <a asp-controller="Puestos" asp-action="PuestosAdd" class="btn btn-primary mb-3" >Agregar Puesto</a>
+</div>
+<hr size="4">
+
+
+<table class="table table-borderless text-center">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Puesto</th>
+            <th>Clave</th>
+            <th>No.Personas</th>
+            <th>Salario</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var puestos in Model)
+        {
+            {
+                Id++;
+            }
+            <tr>
+                <th>@Id</th>
+                <td>@puestos.Areas</td>
+                <td>@puestos.Clave</td>
+                <td>@puestos.Personas</td>
+                <td>@puestos.Salario</td>
+                <td>
+                    <a asp-controller="Puestos" asp-action="PuestosEdit" asp-route-id="@puestos.Id" class="btn btn-outline-info mb-3">Editar</a>
+                    <a asp-controller="Puestos" asp-action="PuestosDelete" asp-route-id="@puestos.Id" class="btn btn-outline-danger mb-3">Borrar</a>
+                </td>
+            </tr>
+        }
+
+
+
+
+        
+
+        
+    </tbody>
+</table>

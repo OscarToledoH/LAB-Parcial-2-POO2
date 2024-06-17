@@ -1,0 +1,20 @@
+@{
+    ViewData["title"] = "Borrar Registro";
+}
+@model EmpleadosModel
+
+
+<form asp-controller="Empleados" asp-action="EmpleadosDelete">
+    <div class="card text-center" style="width: 20rem;">
+        <div class="card-header">
+            <h2>Registro en Espera</h2>
+        </div>
+
+        <input type="hidden" asp-for="Id"/>
+        <div class="card-body">
+            <p class="card-text">Este registro sera borrado permanentemente, esta seguro de su eliminacion?.</p>
+            <button type="submit" class="btn btn-danger mb-3">Borrar</button>
+            <a asp-controller="Empleados" asp-action="Empleadoslist" class="btn btn.btn-outline-info mb-3">Cancelar</a>
+        </div>
+    </div>
+</form>
